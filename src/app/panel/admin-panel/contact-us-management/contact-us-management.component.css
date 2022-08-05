@@ -1,0 +1,25 @@
+h1 {
+    font-family: 'gandom';
+    font-size: 2rem;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-btn {
+    width: 60%;
+    font-size: 1.2rem;
+    border-radius: 100px;
+    height: 3rem;
+    margin-top: 1.5rem;
+}
+
+textarea {
+    height: 4rem;
+}
+
+.form-container {
+    padding: 1rem 5rem;
+}

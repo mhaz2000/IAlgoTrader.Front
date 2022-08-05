@@ -1,0 +1,35 @@
+.about-us {
+    border-radius: 5px;
+    margin: 2rem 0rem;
+    padding: 2.5rem;
+    box-shadow: 2px 2px 5px rgb(111, 127, 159);
+}
+
+fa-icon {
+    font-size: 2rem;
+    color: #05f;
+}
+
+h2,
+h3 {
+    font-family: 'gandom';
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #05f;
+}
+
+h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+main {
+    margin-right: 2.5rem;
+}

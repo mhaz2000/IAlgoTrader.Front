@@ -1,0 +1,38 @@
+.admin-panel {
+    width: 100%;
+    height: 92vh;
+    transition: 0.5s;
+    background-color: #f1f1f1;
+    box-shadow: -6px 0px 10px -9px #000000;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+li {
+    cursor: pointer;
+    padding: 1.5rem 2.5rem;
+    width: 100%;
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+li:hover {
+    background-color: #dddada;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+fa-icon {
+    padding-left: 1rem;
+}
+
+.main-section {
+    height: calc(100vh - 65px);
+    overflow-y: auto;
+}

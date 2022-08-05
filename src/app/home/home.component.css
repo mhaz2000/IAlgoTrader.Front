@@ -1,0 +1,27 @@
+h1 {
+    font-family: 'gandom';
+    font-size: 2.5rem;
+    display: block;
+    line-height: 3.5rem;
+    text-align: center;
+}
+
+.title {
+    color: #05f;
+}
+
+.description {
+    width: 75%;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #acaaaa;
+}
+
+.start-btn {
+    width: 12rem;
+    height: 3rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}

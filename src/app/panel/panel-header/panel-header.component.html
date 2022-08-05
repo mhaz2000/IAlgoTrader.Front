@@ -1,0 +1,22 @@
+<div class="container-fluid panel-header">
+    <div class="d-flex justify-content-between align-items-center mx-5">
+        <div class="d-flex">
+            <fa-icon class="ms-3 icon-bar" [icon]="bars" (click)="toggleMenu()"></fa-icon>
+            <div class="date">{{today}}</div>
+        </div>
+        <div class="image-container d-flex align-items-center position-relative">
+            <h3 class="mb-0 mx-3">عباس بوعذار</h3>
+            <img src="../../../assets/images/user.png" alt="user" [matMenuTriggerFor]="menu">
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item class="d-flex justify-content-between align-items-center">
+                    <span>خروج</span>
+                    <fa-icon class="" [icon]="signOut"></fa-icon>
+                </button>
+                <button mat-menu-item class="d-flex justify-content-between align-items-center">
+                    <span>وبسایت</span>
+                    <fa-icon class="" [icon]="home"></fa-icon>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</div>

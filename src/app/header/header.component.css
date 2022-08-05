@@ -1,0 +1,71 @@
+.logo {
+    width: 250px;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a:hover {
+    border-bottom: 2px solid #05f;
+}
+
+li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.login-btn:hover {
+    color: #05f;
+}
+
+.menu {
+    flex: auto;
+}
+
+.side-menu {
+    height: 100vh;
+    width: 200px;
+}
+
+
+/* mat-sidenav-container {
+    height: 100%;
+} */
+
+mat-sidenav ul {
+    margin-top: 35px;
+}
+
+mat-sidenav ul li {
+    margin-top: 25px;
+}
+
+fa-icon {
+    font-size: 20px;
+}
+
+.close-icon {
+    right: 170px;
+    top: 35px;
+}
+
+button a {
+    text-decoration: none;
+}
+
+.login-link {
+    color: #000;
+}
+
+.login-link:hover {
+    color: #05f;
+}
+
+.sing-up-link {
+    color: #fff;
+}
+
+mat-sidenav {
+    position: fixed !important;
+}

@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    direction: rtl;
+    font-family: 'gandom';
+}
+
+@font-face {
+    font-family: gandom;
+    src: url(./assets/fonts/Gandom.woff);
+}
+
+html,
+body {
+    /* height: 100%; */
+}
+
+body {
+    margin: 0;
+    /* height: 100vh;
+    overflow: hidden; */
+}
+
+mat-sidenav-content {
+    margin-right: 0px !important;
+}
+
+.mat-drawer-container {
+    background-color: #fff;
+}
+
+mat-form-field {
+    text-align: right !important;
+    cursor: pointer;
+}
+
+.cdk-overlay-connected-position-bounding-box {
+    align-items: flex-end !important;
+}

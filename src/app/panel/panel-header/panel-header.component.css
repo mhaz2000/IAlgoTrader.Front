@@ -1,0 +1,23 @@
+.panel-header {
+    /* background-color: rgb(117, 180, 242); */
+    background-color: #36c3fe;
+    position: sticky;
+    top: 0;
+}
+
+.date {
+    font-size: large;
+}
+
+.image-container img {
+    height: 60px;
+    cursor: pointer;
+}
+
+h3 {
+    font-family: 'gandom';
+}
+
+.icon-bar {
+    font-size: 1.1rem;
+}
