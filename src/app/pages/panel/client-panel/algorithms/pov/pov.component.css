@@ -1,0 +1,42 @@
+mat-form-field {
+    width: 50%;
+}
+
+mat-option {
+    text-align: right;
+}
+
+.mat-option-text {
+    font-size: 2rem !important;
+}
+
+.operation {
+    border: 2px solid #98bfcf;
+    border-radius: 5px;
+    width: 60%;
+}
+
+mat-form-field {
+    width: 70%;
+    margin-top: 1rem;
+}
+
+.operation-btn {
+    transition: 0.5s;
+    width: 65%;
+    height: 2.5rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.operation-btn:disabled {
+    background-color: #b0c8c9;
+    color: #000;
+    border-color: #000;
+}
+
+h1 {
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #3d3d3d;
+}

@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <h1>تاریخچه سفارشات</h1>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> تاریخ ارسال سفارش </th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderNumber">
+            <th mat-header-cell *matHeaderCellDef> شناسه سفارش </th>
+            <td mat-cell *matCellDef="let element"> {{element.orderNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="algorithmType">
+            <th mat-header-cell *matHeaderCellDef> نوع الگوریتم </th>
+            <td mat-cell *matCellDef="let element"> {{element.algorithmType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderType">
+            <th mat-header-cell *matHeaderCellDef> نوع سفارش </th>
+            <td mat-cell *matCellDef="let element"> {{element.orderType}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="symbolName">
+            <th mat-header-cell *matHeaderCellDef> نماد </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbolName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="isActive">
+            <th mat-header-cell *matHeaderCellDef> وضعیت فعال بودن </th>
+            <td mat-cell *matCellDef="let element">
+                <fa-icon class="isActive isActive-unCheck" *ngIf="!element.isActive" [icon]="xMark"></fa-icon>
+                <fa-icon class="isActive isActive-check" *ngIf="element.isActive" [icon]="check"></fa-icon>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="isCompleted">
+            <th mat-header-cell *matHeaderCellDef> تکمیل سفارش </th>
+            <td mat-cell *matCellDef="let element">
+                <fa-icon class="isActive isActive-check" *ngIf="element.isCompleted" [icon]="check"></fa-icon>
+                <fa-icon class="isActive isActive-unCheck" *ngIf="!element.isCompleted" [icon]="xMark"></fa-icon>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="d-flex justify-content-center mt-3">
+        <mat-paginator style-paginator (page)="pageChangeEvent($event)" [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="[4]" showFirstLastButtons>
+        </mat-paginator>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+h1 {
+    font-family: 'gandom';
+    font-size: 2rem;
+}
+
+h3 {
+    font-family: 'gandom';
+    margin-bottom: 0px;
+}
+
+.message {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #6592fe;
+    padding: 1rem;
+    margin: 1.5rem 0rem;
+    height: 18rem;
+    overflow-y: auto;
+    text-align: justify;
+    transition: 0.5s;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+
+/* Optional: show position indicator in red */
+
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.message:hover {
+    background-color: #edeef5;
+}
+
+.section-tilte {
+    text-align: center;
+    color: #4200f7;
+    font-weight: bolder;
+    border-bottom: 1px solid #6592fe;
+}
+
+.description {
+    text-align: center;
+}

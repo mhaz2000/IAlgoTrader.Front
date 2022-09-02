@@ -1,0 +1,76 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-lg-4">
+            <div class="info-section w-100">
+                <header>
+                    <div class="d-flex w-100 align-items-center me-3">
+                        <fa-icon [icon]="faPhone"></fa-icon>
+                        <h3 class="my-0 mx-2">شماره تماس</h3>
+                    </div>
+                    <p class="me-3 mt-3 mb-0">{{contactUs?.phoneNumbers}}</p>
+                </header>
+            </div>
+            <div class="info-section w-100">
+                <header>
+                    <div class="d-flex w-100 align-items-center me-3">
+                        <fa-icon [icon]="faMail"></fa-icon>
+                        <h3 class="my-0 mx-2">ایمیل</h3>
+                    </div>
+                    <p class="me-3 mt-3 mb-0">{{contactUs?.emails}}</p>
+                </header>
+            </div>
+            <div class="info-section w-100">
+                <header>
+                    <div class="d-flex w-100 align-items-center me-3">
+                        <fa-icon [icon]="faAddress"></fa-icon>
+                        <h3 class="my-0 mx-2">آدرس</h3>
+                    </div>
+                    <pre class="me-3 mt-3 mb-0">{{contactUs?.addresses}}
+                    </pre>
+                </header>
+            </div>
+        </div>
+        <div class="col-12 col-lg-8">
+            <div class="info-section">
+                <header class="mb-4">
+                    <div class="d-flex w-100 align-items-center form-title">
+                        <fa-icon [icon]="faText"></fa-icon>
+                        <h3 class="my-0 mx-2">فرم تماس با ما</h3>
+                    </div>
+                </header>
+                <form [formGroup]="contactUsForm" class="d-flex flex-wrap justify-content-center">
+                    <div class="row contact-us-form justify-content-center">
+                        <mat-form-field appearance="fill">
+                            <mat-label>نام و نام خانوادگی</mat-label>
+                            <input formControlName="fullName" matInput>
+                        </mat-form-field>
+
+                        <div class="col-12 col-lg-6">
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>شماره تماس</mat-label>
+                                <input formControlName="phone" matInput>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-6">
+
+                            <mat-form-field appearance="fill" class="w-100">
+                                <mat-label>ایمیل</mat-label>
+                                <input formControlName="email" matInput>
+                            </mat-form-field>
+                        </div>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>عنوان</mat-label>
+                            <input formControlName="title" matInput>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>توضیحات</mat-label>
+                            <textarea formControlName="description" matInput></textarea>
+                        </mat-form-field>
+                        <button class="btn-primary send-btn" [disabled]="contactUsForm.invalid" (click)="Send()">ارسال</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

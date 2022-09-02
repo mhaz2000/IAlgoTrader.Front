@@ -1,0 +1,38 @@
+<app-panel-header></app-panel-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 pe-0">
+            <div class="admin-panel">
+                <ul class="panel-menu">
+                    <a [routerLink]="['edit-information']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="edit"></fa-icon>
+                            ویرایش اطلاعات
+                        </li>
+                    </a>
+                    <a [routerLink]="['contactUs']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="phone"></fa-icon>
+                            تماس با ما
+                        </li>
+                    </a>
+                    <a [routerLink]="['users-info']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="users"></fa-icon>
+                            اطلاعات کاربران
+                        </li>
+                    </a>
+                    <a [routerLink]="['contactWithUsers']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="contact"></fa-icon>
+                            ارتباط با کاربران
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="col-9 main-section">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

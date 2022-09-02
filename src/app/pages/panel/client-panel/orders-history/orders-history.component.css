@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+    /* min-width: 450px; */
+}
+
+th {
+    background: #6059f7;
+    color: #fff;
+    text-align: right !important;
+    font-size: 1rem;
+}
+
+td,
+th {
+    padding: 1rem !important;
+}
+
+tr:nth-child(even) {
+    background: #eeeded;
+}
+
+.isApplied {
+    font-size: 1.3rem;
+}
+
+.isActive-check {
+    color: green;
+}
+
+.isActive-unCheck {
+    color: red;
+}

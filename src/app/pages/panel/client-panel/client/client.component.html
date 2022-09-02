@@ -1,0 +1,64 @@
+<app-panel-header></app-panel-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 pe-0">
+            <div class="client-panel">
+                <ul class="panel-menu">
+                    <a [routerLink]="['edit-information']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="edit"></fa-icon>
+                            ویرایش اطلاعات
+                        </li>
+                    </a>
+                    <a [routerLink]="['symbols']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="chartBar"></fa-icon>
+                            آخرین وضعیت نماد ها
+                        </li>
+                    </a>
+                    <a [routerLink]="['ita']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="gear"></fa-icon>
+                            معاملات چرخه ای
+                        </li>
+                    </a>
+                    <a>
+                        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                            <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                                <a class="algo-item d-flex align-items-center" routerLink="{{node.route}}">{{node.name}}</a>
+                            </mat-tree-node>
+                            <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+                                <li class="item-tree">
+                                    <a [ngStyle]="{'background-color': treeControl.isExpanded(node) ? '#dddada' : 'transparent'}" mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name" class="algo d-flex justify-content-between align-items-center">
+                                        <div class="item-title">
+                                            <fa-icon [icon]="at"></fa-icon>
+                                            {{node.name}}
+                                        </div>
+                                        <mat-icon>
+                                            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_left'}}
+                                        </mat-icon>
+                                    </a>
+                                </li>
+                            </mat-tree-node>
+                        </mat-tree>
+                    </a>
+                    <a [routerLink]="['orders-history']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="clock"></fa-icon>
+                            تاریخچه سفارشات
+                        </li>
+                    </a>
+                    <a [routerLink]="['trades']">
+                        <li class="panel-item">
+                            <fa-icon [icon]="dollar"></fa-icon>
+                            معاملات انجام شده
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="col-9 main-section">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

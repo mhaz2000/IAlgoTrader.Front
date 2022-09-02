@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <h1>ویرایش اطلاعات کاربری</h1>
+    <form [formGroup]="editPersonalInformationForm">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="image-container" (click)="fileInput.click()">
+                    <input hidden (change)="onFileSelected($event)" #fileInput type="file">
+                    <img src="../../../assets/images/user.png" alt="user image">
+                    <div class="overlay"></div>
+                    <fa-icon class="icon" [icon]="camera"></fa-icon>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>نام</mat-label>
+                    <input formControlName="firstName" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-lg-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>نام خانوادگی</mat-label>
+                    <input formControlName="lastName" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-lg-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>ایمیل</mat-label>
+                    <input formControlName="email" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-lg-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>شماره تماس</mat-label>
+                    <input formControlName="phone" matInput>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-lg-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>رمز عبور</mat-label>
+                    <input type="password" formControlName="password" matInput (keyup)="setMessage()">
+                    <mat-hint>حداقل 6 کاراکتر</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-lg-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>تکرار رمز عبور</mat-label>
+                    <input type="password" formControlName="passwordMatch" matInput (keyup)="setMessage()">
+                    <div class="password-not-match-error">{{message}}</div>
+                </mat-form-field>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <button class="btn-primary form-btn" [disabled]="editPersonalInformationForm.invalid" (click)="update()">ذخیره تغییرات</button>
+            </div>
+        </div>
+    </form>
+</div>

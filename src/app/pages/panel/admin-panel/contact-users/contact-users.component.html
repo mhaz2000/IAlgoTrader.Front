@@ -1,0 +1,41 @@
+<div class="container  mt-5">
+    <h1>
+        پیغام های کاربران
+    </h1>
+    <div class="messages-container">
+        <div class="row">
+            <div *ngFor="let form of contactUsList" class="col-12 col-lg-6 align-items-center">
+                <div class="message">
+                    <h3 class="">
+                        <section class="section-tilte ms-2">ارسال شده از</section>
+                        <section class="description">
+                            {{form.fullName || form.email || form.phoneNumber}}
+                        </section>
+                    </h3>
+                    <h3 class="">
+                        <section class="section-tilte ms-2">در تاریخ</section>
+                        <section class="description">
+                            {{form.date}}
+                        </section>
+                    </h3>
+                    <h3 class="">
+                        <section class="section-tilte ms-2">عنوان</section>
+                        <section class="description">
+                            {{form.title}}
+                        </section>
+                    </h3>
+                    <h3 class="">
+                        <section class="section-tilte ms-2">توضیحات</section>
+                        <section class="description">
+                            {{form.description}}
+                        </section>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <mat-paginator style-paginator (page)="pageChangeEvent($event)" [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="[4]" showFirstLastButtons>
+        </mat-paginator>
+    </div>
+</div>

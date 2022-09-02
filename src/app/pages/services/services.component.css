@@ -1,0 +1,48 @@
+.title {
+    font-size: 2.5rem;
+}
+
+.title-important-part {
+    color: #05f;
+}
+
+.panel-pic {
+    height: 450px;
+    width: auto;
+}
+
+.services {
+    width: 100%;
+}
+
+.desc {
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+
+.bg-color {
+    background-color: #b0dff4;
+}
+
+.pic {
+    width: 100%;
+    height: auto;
+}
+
+.footer-desc {
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 2rem;
+    font-weight: bold;
+    color: #05f;
+    text-shadow: 2px 2px 8px #11a1eb;
+}
+
+@media only screen and (max-width: 992px) {
+    .img-order {
+        order: 1;
+    }
+    .desc-order {
+        order: 2;
+    }
+}

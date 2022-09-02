@@ -1,0 +1,57 @@
+.iterative-process {
+    border: 2px solid #98bfcf;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0px 0px 7px rgb(25, 79, 227);
+}
+
+h1 {
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #3d3d3d;
+}
+
+mat-option {
+    text-align: right;
+}
+
+.mat-option-text {
+    font-size: 2rem !important;
+}
+
+mat-form-field {
+    width: 70%;
+    margin-top: 1rem;
+}
+
+.operation-btn {
+    transition: 0.5s;
+    width: 60%;
+    height: 2.5rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.operation-btn:disabled {
+    background-color: #b0c8c9;
+    color: #000;
+    border-color: #000;
+}
+
+.buy-operation {
+    border-left: 1px solid black;
+}
+
+h2 {
+    text-align: center;
+}
+
+.check-boxes {
+    margin: 2rem 2rem;
+    font-size: 1.3rem;
+}
+
+.activness-title {
+    color: #05f;
+    font-weight: bold;
+}

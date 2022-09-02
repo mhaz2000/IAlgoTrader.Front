@@ -1,0 +1,53 @@
+<div class="container">
+    <h1>آخرین وضعیت نماد ها</h1>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="symbolName">
+            <th mat-header-cell *matHeaderCellDef> نام نماد</th>
+            <td mat-cell *matCellDef="let element"> {{element.symbolName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> تاریخ </th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="numberTrade">
+            <th mat-header-cell *matHeaderCellDef> تعداد معاملات </th>
+            <td mat-cell *matCellDef="let element"> {{element.numberTrade}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="closePrice">
+            <th mat-header-cell *matHeaderCellDef> قیمت بسته شده </th>
+            <td mat-cell *matCellDef="let element"> {{element.closePrice}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastPrice">
+            <th mat-header-cell *matHeaderCellDef> آخرین قیمت </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastPrice}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="priceMin">
+            <th mat-header-cell *matHeaderCellDef> کمترین قیمت </th>
+            <td mat-cell *matCellDef="let element"> {{element.priceMin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="priceMax">
+            <th mat-header-cell *matHeaderCellDef> بیشترین قیمت </th>
+            <td mat-cell *matCellDef="let element"> {{element.priceMax}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="priceFirst">
+            <th mat-header-cell *matHeaderCellDef> اولین قیمت </th>
+            <td mat-cell *matCellDef="let element"> {{element.priceFirst}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div class="d-flex justify-content-center mt-3">
+        <mat-paginator style-paginator (page)="pageChangeEvent($event)" [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="[4]" showFirstLastButtons>
+        </mat-paginator>
+    </div>
+</div>

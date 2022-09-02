@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+    /* min-width: 450px; */
+}
+
+th {
+    background: #6059f7;
+    color: #fff;
+    text-align: right !important;
+    font-size: 1rem;
+}
+
+td,
+th {
+    padding: 1rem !important;
+}
+
+tr:nth-child(even) {
+    background: #eeeded;
+}
+
+h1 {
+    font-family: 'gandom';
+    margin-top: 2rem;
+}

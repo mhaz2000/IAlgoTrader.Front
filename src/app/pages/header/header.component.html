@@ -1,0 +1,33 @@
+<mat-sidenav-container class="position-relative mt-2">
+    <mat-sidenav class="side-menu d-lg-none position-absolute" mode="side" position="end" [opened]="menuOpen">
+        <fa-icon class="close-icon position-absolute" [icon]="close" (click)="toggleMenu()"></fa-icon>
+        <ul class="menu">
+            <li class="mx-3"><a [routerLink]="['services']">خدمات</a></li>
+            <li class="mx-3"><a [routerLink]="['contactUs']">تماس با ما</a></li>
+            <li class="mx-3"><a [routerLink]="['aboutUs']">درباره ی ما</a></li>
+        </ul>
+    </mat-sidenav>
+    <nav class="top-menu bg-light" [hidden]="hideMenu">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="right-side-items d-flex align-items-center">
+                <fa-icon class="d-lg-none mt-1 ms-3" [icon]="bars" (click)="toggleMenu()"></fa-icon>
+                <a href="#" class="brand">
+                    <img class="logo" src="../../assets/svg-files/logo.svg" alt="IAlgoTrader">
+                </a>
+            </div>
+            <ul class="d-none menu d-lg-flex mt-4">
+                <li class="mx-3"><a [routerLink]="['services']">خدمات</a></li>
+                <li class="mx-3"><a [routerLink]="['contactUs']">تماس با ما</a></li>
+                <li class="mx-3"><a [routerLink]="['aboutUs']">درباره ی ما</a></li>
+            </ul>
+            <div class="left-side-items d-flex align-items-center">
+                <a *ngIf="!isLoggedIn" class="login-link" [routerLink]="['signIn']"><button class="btn mt-2 login-btn">ورود</button></a>
+                <a *ngIf="isLoggedIn" class="login-link" [routerLink]="['client']"><button class="btn mt-2 login-btn">ورود به پنل کاربری</button></a>
+                <a *ngIf="isLoggedIn && isAdmin" class="login-link" [routerLink]="['admin']"><button class="btn mt-2 login-btn">ورود به پنل مدیریت</button></a>
+                <a *ngIf="!isLoggedIn" class="sing-up-link" [routerLink]="['signUp']"><button class="btn btn-primary mt-2">ثبت نام</button></a>
+                <a *ngIf="isLoggedIn" class="sing-up-link" [routerLink]="['signIn']" (click)="logout()"><button class="btn btn-primary mt-2">خروج</button></a>
+            </div>
+        </div>
+    </nav>
+
+</mat-sidenav-container>

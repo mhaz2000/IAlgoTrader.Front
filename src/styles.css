@@ -5,20 +5,22 @@
     font-family: 'gandom';
 }
 
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'gandom' !important;
+}
+
 @font-face {
     font-family: gandom;
     src: url(./assets/fonts/Gandom.woff);
 }
 
-html,
-body {
-    /* height: 100%; */
-}
-
 body {
     margin: 0;
-    /* height: 100vh;
-    overflow: hidden; */
+    /* height: 100vh;*/
+    overflow-x: hidden;
 }
 
 mat-sidenav-content {
@@ -36,4 +38,39 @@ mat-form-field {
 
 .cdk-overlay-connected-position-bounding-box {
     align-items: flex-end !important;
+}
+
+.error-snack-bar {
+    background-color: red;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+}
+
+.success-snack-bar {
+    background-color: rgb(78, 255, 47);
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+}
+
+.panel-snack-bar {
+    margin: 0 !important;
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+}
+
+.mat-paginator-page-size {
+    display: none !important;
+}
+
+.mat-paginator-range-actions {
+    direction: ltr !important;
+}
+
+.mat-paginator-container {
+    font-size: 1rem !important;
+}
+
+.mat-option-text {
+    font-size: 1.1rem !important;
 }
