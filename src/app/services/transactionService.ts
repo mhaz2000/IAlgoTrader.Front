@@ -28,4 +28,12 @@ export class TransactionService {
                 'headers': this.headers,
             });
     }
+
+    getSymbolTransactions(id: string, pageSize: number, pageIndex: number): Observable<any> {
+        return this.httpClient.get(this.baseUrl + '/api/SymbolTransaction/GetDetail/' + id,
+            {
+                'headers': this.headers,
+                params: { 'pageIndex': pageIndex, 'pageSize': pageSize }
+            });
+    }
 }

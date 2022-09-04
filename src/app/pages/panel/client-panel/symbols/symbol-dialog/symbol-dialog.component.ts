@@ -1,31 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TransactionModel } from 'src/app/models/transaction/transactionModel';
 import { TransactionService } from 'src/app/services/transactionService';
-import { MatDialog } from '@angular/material/dialog';
-import { SymbolDialogComponent } from './symbol-dialog/symbol-dialog.component';
+
+export interface DialogData {
+  symbol: any
+}
 
 @Component({
-  selector: 'app-symbols',
-  templateUrl: './symbols.component.html',
-  styleUrls: ['./symbols.component.css']
+  selector: 'app-symbol-dialog',
+  templateUrl: './symbol-dialog.component.html',
+  styleUrls: ['./symbol-dialog.component.css']
 })
-export class SymbolsComponent implements OnInit {
+export class SymbolDialogComponent implements OnInit {
 
+  constructor(private dialogRef: MatDialogRef<SymbolDialogComponent>,
+    private transactionService: TransactionService,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   transactions: TransactionModel[] = [];
   pageLength = 0;
   pageSize = 10;
 
-
-  displayedColumns: string[] = ['symbolName', 'date', 'numberTrade', 'closePrice', 'lastPrice',
+  displayedColumns: string[] = ['date', 'numberTrade', 'closePrice', 'lastPrice',
     'priceMin', 'priceMax', 'priceFirst'];
-
-  constructor(private transactionService: TransactionService, private dialog: MatDialog) { }
   dataSource: TransactionModel[] = [];
 
 
   ngOnInit(): void {
-    this.transactionService.get(10, 1).subscribe({
+    this.transactionService.getSymbolTransactions(this.data.symbol.symbolId, 10, 1).subscribe({
       next: (response) => {
         this.pageLength = response.total;
         response.content.forEach((element: any) => {
@@ -37,11 +40,15 @@ export class SymbolsComponent implements OnInit {
         this.dataSource = this.transactions;
       }
     })
+
+
+    console.log(this.data)
   }
+
 
   pageChangeEvent(event: any) {
     this.transactions = [];
-    this.transactionService.get(10, event.pageIndex + 1).subscribe({
+    this.transactionService.getSymbolTransactions(this.data.symbol.symbolId, 10, event.pageIndex + 1).subscribe({
       next: (response) => {
         this.pageLength = response.total;
         response.content.forEach((element: any) => {
@@ -53,12 +60,6 @@ export class SymbolsComponent implements OnInit {
 
         this.dataSource = this.transactions;
       }
-    })
-  }
-
-  openDialog(symbol: any) {
-    this.dialog.open(SymbolDialogComponent, {
-      data: { symbol }
     })
   }
 }

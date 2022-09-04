@@ -18,13 +18,6 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                 setHeaders: { Authorization: `Bearer ${token}` }
             });
         }
-
-        // this.router.events.subscribe(event => {
-        //     if (event instanceof NavigationStart)
-        //         if (event.url.includes('website'))
-        //             isFromWebsite = true;
-        // })
-
         return next.handle(request)
             .pipe(
                 catchError((error: HttpErrorResponse) => {

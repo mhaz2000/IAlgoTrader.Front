@@ -50,6 +50,8 @@ import { OrdersHistoryComponent } from './pages/panel/client-panel/orders-histor
 import { TradesComponent } from './pages/panel/client-panel/trades/trades.component';
 import { TradeService } from './services/tradeService';
 import { ServicesComponent } from './pages/services/services.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SymbolDialogComponent } from './pages/panel/client-panel/symbols/symbol-dialog/symbol-dialog.component';
 
 const routes: Routes = [
   { path: 'website', component: HomeComponent },
@@ -105,9 +107,11 @@ const routes: Routes = [
     OrdersHistoryComponent,
     TradesComponent,
     ServicesComponent,
+    SymbolDialogComponent,
   ],
   imports: [
     MatCheckboxModule,
+    MatDialogModule,
     MatSelectModule,
     MatTabsModule,
     MatPaginatorModule,
