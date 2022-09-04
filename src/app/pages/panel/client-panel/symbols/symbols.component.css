@@ -22,4 +22,6 @@ tr:nth-child(even) {
 h1 {
     font-family: 'gandom';
     margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3d3d3d;
 }

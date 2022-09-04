@@ -52,6 +52,7 @@ import { TradeService } from './services/tradeService';
 import { ServicesComponent } from './pages/services/services.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SymbolDialogComponent } from './pages/panel/client-panel/symbols/symbol-dialog/symbol-dialog.component';
+import { StatisticsComponent } from './pages/panel/admin-panel/statistics/statistics.component';
 
 const routes: Routes = [
   { path: 'website', component: HomeComponent },
@@ -77,6 +78,7 @@ const routes: Routes = [
       { path: 'edit-information', component: EditPersonalInformationComponent },
       { path: 'contactUs', component: ContactUsManagementComponent },
       { path: 'users-info', component: UsersInfoComponent },
+      { path: 'statistics', component: StatisticsComponent },
       { path: 'contactWithUsers', component: ContactUsersComponent }
     ]
   },
@@ -108,6 +110,7 @@ const routes: Routes = [
     TradesComponent,
     ServicesComponent,
     SymbolDialogComponent,
+    StatisticsComponent,
   ],
   imports: [
     MatCheckboxModule,

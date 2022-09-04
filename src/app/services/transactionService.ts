@@ -36,4 +36,11 @@ export class TransactionService {
                 params: { 'pageIndex': pageIndex, 'pageSize': pageSize }
             });
     }
+
+    getStatistics(): Observable<any>{
+        return this.httpClient.get(this.baseUrl + '/api/SymbolTransaction/GetStatistics',
+            {
+                'headers': this.headers,
+            });
+    }
 }

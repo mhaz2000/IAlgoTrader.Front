@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faEdit, faPhone, faInfoCircle, faUsers, faContactCard } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faPhone, faInfoCircle, faUsers, faContactCard, faBarChart } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from 'src/app/services/userService';
 
 @Component({
@@ -14,6 +14,7 @@ export class AdminComponent implements OnInit {
   info = faInfoCircle;
   users = faUsers;
   contact = faContactCard;
+  chart = faBarChart;
 
   constructor(private userService: UserService) { }
 
