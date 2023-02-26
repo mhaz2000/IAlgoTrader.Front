@@ -3,9 +3,9 @@ export class ItaOrder {
 }
 
 export class ItaSellOrder {
-    constructor(public startLimit: number, public stopLimit: number, public dailyShares: string, public maximumShares: number) { }
+    constructor(public startLimit: number, public stopLimit: number, public dailyShares: string, public maximumShares: number | null) { }
 }
 
 export class ItaBuyOrder {
-    constructor(public startLimit: number, public stopLimit: number, public dailyShares: string, public maximumShares: number) { }
+    constructor(public startLimit: number, public stopLimit: number, public dailyShares: string, public maximumShares: number | null) { }
 }

@@ -114,9 +114,10 @@ export class ItaComponent implements OnInit {
 
   sendOrders() {
     if (this.inputValidation())
+    debugger
       this.orderService.sendItaOrder(new ItaOrder(this.selectControl.value || '', this.buyActiveness ?
-        new ItaBuyOrder(this.buyStartAmount?.value, this.buyStopAmount?.value, this.buyDailyShares?.value, this.buySharesNumber?.value) : null,
-        this.sellActiveness ? new ItaSellOrder(this.sellStartAmount?.value, this.sellStopAmount?.value, this.sellDailyShares?.value, this.sellSharesNumber?.value) : null))
+        new ItaBuyOrder(this.buyStartAmount?.value, this.buyStopAmount?.value, this.buyDailyShares?.value, this.buySharesNumber?.value || null) : null,
+        this.sellActiveness ? new ItaSellOrder(this.sellStartAmount?.value, this.sellStopAmount?.value, this.sellDailyShares?.value, this.sellSharesNumber?.value || null) : null))
         .subscribe({
           next: (response) => {
             this.snackBar.open(response.message, undefined, {
